@@ -1,0 +1,61 @@
+Granskares namn: Adam Åsbrink
+Namn på den granskade: Buster Hultgren
+Granskad uppgift: 122 Game of life and DEATH
+
+
+Användarvänlighet:
+
+_ Informativa utskrifter / lättbegripligt grafiskt gränssnitt
+	- Dina utskrifter kan behöva en liten finjustering. Instruktionerna som dyker upp när man kör programmet är lite svårtolkade. För det första kan du skapa lite mellanrum mellan de olika delarna så att det blir mer lättöverskådligt samt sätta dit punkter vid slutet av meningarna och kolontecken vid inmatning. Det mesta av informationen kring Game of life måste man ju självklart hitta själv i länken. kan dock vara bra med en lite tydligare förklaring om hur filen ska se ut och hur inmatningarna i filen påverkar programmet. Trodde till exempel först att man bara kunde lägga in tre koordinater i sin fil.
+
+X Enkel inmatning
+	- Inmatningen är enkel och bra. Inga konstigeter.
+
+Programmerarvänlighet:
+
+X Vettiga namn
+	- Tycker att dina namn är bra och lättförståeliga.
+
+_ Kommentarer
+	- Dina kommentarer är korta, koncisa och lättförståeliga. Du har inte överkommenterat dock har du exempelvis inte förklarat vissa inparametrar och returvärden. Ett exempel är: ”initDeadCells(matrix, array)”. Här finns det ingen förklaring till inparametern ”array”. Kan kanske också vara bra att tydliggöra att ”matrix” är klassen. Står i instruktionerna att man ska förklara alla in- och utvärden. Better safe than sorry liksom. :) Kolla även på metoderna ”neighboorhood” och ”isAlive”.
+
+X Konsekvent språk
+	- Du har ett konsekvent språk, inga konstigheter.
+
+_ Konsekvent typografi
+	- Du har namngett alla funktioner, variabler och metoder på samma sätt vilket är bra. Enda är att klasserna ska börja med stor bokstav.
+
+_ Felhantering
+	- Har inte börjat med felhantering än.
+
+Strukturering:
+
+X Lämplig uppdelning i funktioner
+	- Alla funktioner gör en sak och programmet har särskilda funktioner för textgränssnitt och filhantering. 
+
+_ Lämplig uppdelning i klasser
+	- Bra uppdelning med en klass som beskriver cellen och en klass som beskriver spelplanen samt funktionerna som beskriver textgränssnitt och filhantering. Dock tycker jag att funktionerna ”newGen” och ”initDeadCells” kan istället vara metoder i klassen ”matrix”. Detta eftersom funktionerna anropar self-värden från matrix-klassen samt är funktioner som beskriver själva spelplanen vilket klassen ”matrix” är till för. Små grejer men kan va värt att tänka över.
+
+X Temporära variabler så lokalt som möjligt
+	- Detta gör du, inga konstigheter vad jag kan se.
+
+X Återanvändbara funktioner/klasser
+	- Det enda jag kan tänka mig är klassen ”cell” eftersom den skulle kunna appliceras i andra program som handlar om koordinatsystem. Metoden ”isAlive” är ganska specificerad men annars är klassen återanvändbar till en stor del.
+
+_ In- och utdata till funktioner
+	- Alla dina funktioner har inte utdata som returvärden. Som jag sa innan tycker jag att funktionerna ”newGen” och ”initDeadCells” borde vara metoder i klassen ”matrix”. Funktionen ”readFile” borde dock ha ett returvärde, exempelvis listan med celler. 
+
+X Flexibelt/utbyggbart program
+	- Det är enkelt att utöka spelplanen om man vill och programmet har inget problem med att läsa in nya filer. Att vissa funktioner saknar returvärde gör programmet lite mindre flexibelt men annars tycker jag att programmet är bra uppbyggt.
+
+_ Ingen kodupprepning
+	- Hittade ett exempel på kodupprepning. Funktionerna ”startGame” och ”help” har nästan samma utskrifter. Kanske går att på något smidigt fixa så att man bara skriver samma utskrift en gång. 
+
+X Ingen hårdkodning
+	- Ingen hårdkodning.
+
+Följande punkt är nödvändig (måste alltid åtgärdas)
+
+_ Uppfyller kraven i lydelsen
+	- Du uppfyller alla kraven i lydelsen för de grundläggande kraven. Finns ju potential att lägga in felhantering o.s.v. Enda är att det står: ”För att slippa tråkiga och tidsödande inmatningar ska du lägga upp filer med cellernas
+koordinater”. Så tips är att fixa några olika filer med spännande möster på cellerna som man sedan kan välja av i en meny plus ett alternativ där man skapar en egen fil.

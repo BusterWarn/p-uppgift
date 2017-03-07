@@ -1,0 +1,80 @@
+Granskares namn: Buster Hultgren
+Namn på den granskade: Adam Åsbring
+Granskad uppgift: 192 Filofax
+
+
+Användarvänlighet
+
+_ Informativa utskrifter / lättbegripligt grafiskt gränssnitt
+	- Huvudmenyn som man får är bra information, och den skrivs ut efter varje gång man har inmatat en instruktion till programmet. Dock finns det några problem.
+	
+	1. Efter vissa val skrivs LINE (en rad av bindesträck.) ut, för att ge bättre struktur för användaren. Det används dock inte konsekvent genom programmet. Det verkar fattas bland annat då användaren bläddrar framåt och bakåt.
+	
+	2. Efter att LINE har skrivits ut, så verkar den nuvarande sidan också skrivas ut, innan huvudmenyn. Det är rätt förvirrande.
+	
+	2. Efter vissa val så skrivs inte information ut i sammanhang till informationen som skrivs ut. T.ex. då användaren väljer att visa, skrivs det inte ut vad som visas. Det kanske inte är någonting nödvändigt för att få användaren att förstå vad som skrivs ut, utan snarare för att strukturera lite bättre.
+	
+	3. Efter varje val skrivs huvudprogrammet ut efter att valet har skrivits ut. Det första man läser efter att ha gjort ett val huvudmenyn, och man behöver bläddra upp med blicken efteråt. Det skulle vara pricken över i:et ifall den information användaren krävde skulle vara lite tydligare. Någon sorts markering skulle kunna göras.
+	
+_ Enkel inmatning
+	- Inmatnignen är enkel och tydlig, inga problem.
+
+
+Programmerarvänlighet
+
+_ Vettiga namn
+	- Namnen är tydliga och konsekventa, inget fel med dem.
+
+_ Kommentarer
+	- Kommentarerna är korta, och innehåller information som beksriver vad programmen gör. Kommentarerna används också effektivt för att strukturera programmet, t.ex. med hjälp av bindesträck då en klass definieras. Dock så saknas det ofta information kring inparametrar och returvärden. T.ex. i metoden sort_list (Day_planner) så saknas kommentar kring retur värde. Annat exempel är metoden show_pages_month (Day_planner) så är det otydligt vad inparametern read_month gör.
+	
+_ Konsekvent språk
+	- Språket är konsekvent. Finns ingenting att klaga på.
+
+_ Konsekvent typografi
+	- Typografin är konsekvent, undertrykning används för att ersätta mellanrum i funktioner, metoder och variablar. Stora bokstäver används för att definiera klasser.
+
+_ Felhantering
+	- Det verkar finnas felhantering för varje val användaren kan göra. Dock finns det inget då användaren matar in "" (ingenting) i huvudmenyn, och programmet går i error.
+
+
+Strukturering
+
+_ Lämplig uppdelning i klasser
+	- Klassernas data samlas som attribut och klassernas metoder hör ihop till klasserna. Var har sin egen uppgift. Dock skulle förmodligen klassen Day_planner inte beöva vara en klass, då endast ett objekt skapas. Den strukturerar ändå upp koden en del och fyller därmed en funktion.
+	
+_ Lämplig uppdelning i funktioner
+	- Funktioner och metoder har en uppgift var.
+
+_ Temporära variabler så lokalt som möjligt
+	- Temporära variabler tycks användas endast lokalt. Två globala variablar används, LINE och INDENT. Det funkar, men ostrukturerat. Om de inte går att få in dem i huvudprogrammet så är en bra idé att definiera dem i början av programmet, bredvid varandra för att hålla struktur..
+
+_ Återanvändbara funktioner/klasser
+	- Många av funktionerna skulle kunna användas i andra program då de har parameter inmatningar och oftar returnerar lokala variablar. Ett bra exempel på detta är read_file. Klassen Page kan användas i andra program och Day_planner skulle kunna användas, ifall den inte tog in en global variabel (LINE). S 
+
+_ In- och utdata till funktioner
+	- Alla funktioner och metoder använder sig av in- och utdata (då de behövs) med undantag för de globala variablerna som används.
+
+_ Flexibelt/utbyggbart program
+	- Skulle möjligtvis kunna läsa av andra filer, då användaren få välja fil själv. Ett bra sätt att göra detta på skulle vara att dela upp filer årsvis, så behöver du inte tänka på att funktionen read_month ska koppla år och månad (vilket den inte gör i nuläget).
+
+_ Ingen kodupprepning
+	- Knappt någon koduprepning anges i filen. Det görs vid några tillfällen som du själv är medveten om och har kommenterat kring. Sen finns det några oväsentliga saker som upprepas. På rad 75 och 78 har du upper() på båda, när du skulle kunna använda det en enda gång i rad 74. :)
+
+_ Ingen hårdkodning
+	- Du undviker några tillfällen av hårdkodning genom att ha med globala variabler, vilket jag redan skrivit om. Jag ser ingen hårdkodning, utan det ser bra ut.
+
+
+
+
+_ Uppfyller kraven i lydelsen
+	- Lydelsen kräver att programmet minst ska kunna utföra dessa saker:
+	1. Bläddra framåt
+	2. Bläddra bakåt
+	3. Sätt in ny sida
+	4. Ta bort sidan
+	5. Visa alla sidor
+	6. Avsluta
+	
+	Programmet klarar av att göra alla dessa saker.
+	
